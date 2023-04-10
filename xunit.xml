@@ -1,0 +1,71 @@
+<testsuite name="Mocha Tests" tests="3" failures="0" errors="1" skipped="0" timestamp="Mon, 10 Apr 2023 07:35:05 GMT" time="3.776">
+<testcase classname="Cypress web security" name="Validate visiting two different domains" time="0"><failure>&#x60;cy.visit()&#x60; failed because you are attempting to visit a URL that is of a different origin.
+
+You likely forgot to use &#x60;cy.origin()&#x60;:
+
+&#x60;cy.visit(&#x27;http://www.webdriveruniversity.com/&#x27;)&#x60;
+&#x60;&#x3C;commands targeting http://www.webdriveruniversity.com go here&#x3E;&#x60;
+
+&#x60;cy.origin(&#x27;https://automationteststore.com&#x27;, () =&#x3E; {&#x60;
+&#x60;  cy.visit(&#x27;https://automationteststore.com/&#x27;)&#x60;
+&#x60;  &#x3C;commands targeting https://automationteststore.com go here&#x3E;&#x60;
+&#x60;})&#x60;
+
+The new URL is considered a different origin because the following parts of the URL are different:
+
+  &#x3E; protocol, superdomain
+
+You may only &#x60;cy.visit()&#x60; same-origin URLs within a single test.
+
+The previous URL you visited was:
+
+  &#x3E; &#x27;http://www.webdriveruniversity.com&#x27;
+
+You&#x27;re attempting to visit this URL:
+
+  &#x3E; &#x27;https://automationteststore.com&#x27;
+
+https://on.cypress.io/cannot-visit-different-origin-domain
+CypressError: &#x60;cy.visit()&#x60; failed because you are attempting to visit a URL that is of a different origin.
+
+You likely forgot to use &#x60;cy.origin()&#x60;:
+
+&#x60;cy.visit(&#x27;http://www.webdriveruniversity.com/&#x27;)&#x60;
+&#x60;&#x3C;commands targeting http://www.webdriveruniversity.com go here&#x3E;&#x60;
+
+&#x60;cy.origin(&#x27;https://automationteststore.com&#x27;, () =&#x3E; {&#x60;
+&#x60;  cy.visit(&#x27;https://automationteststore.com/&#x27;)&#x60;
+&#x60;  &#x3C;commands targeting https://automationteststore.com go here&#x3E;&#x60;
+&#x60;})&#x60;
+
+The new URL is considered a different origin because the following parts of the URL are different:
+
+  &#x3E; protocol, superdomain
+
+You may only &#x60;cy.visit()&#x60; same-origin URLs within a single test.
+
+The previous URL you visited was:
+
+  &#x3E; &#x27;http://www.webdriveruniversity.com&#x27;
+
+You&#x27;re attempting to visit this URL:
+
+  &#x3E; &#x27;https://automationteststore.com&#x27;
+
+https://on.cypress.io/cannot-visit-different-origin-domain
+    at cannotVisitDifferentOrigin (http://www.webdriveruniversity.com/__cypress/runner/cypress_runner.js:140999:72)
+    at http://www.webdriveruniversity.com/__cypress/runner/cypress_runner.js:142019:20
+    at tryCatcher (http://www.webdriveruniversity.com/__cypress/runner/cypress_runner.js:11318:23)
+    at Promise._settlePromiseFromHandler (http://www.webdriveruniversity.com/__cypress/runner/cypress_runner.js:9253:31)
+    at Promise._settlePromise (http://www.webdriveruniversity.com/__cypress/runner/cypress_runner.js:9310:18)
+    at Promise._settlePromise0 (http://www.webdriveruniversity.com/__cypress/runner/cypress_runner.js:9355:10)
+    at Promise._settlePromises (http://www.webdriveruniversity.com/__cypress/runner/cypress_runner.js:9435:18)
+    at _drainQueueStep (http://www.webdriveruniversity.com/__cypress/runner/cypress_runner.js:6025:12)
+    at _drainQueue (http://www.webdriveruniversity.com/__cypress/runner/cypress_runner.js:6018:9)
+    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://www.webdriveruniversity.com/__cypress/runner/cypress_runner.js:6034:5)
+    at Async.drainQueues (http://www.webdriveruniversity.com/__cypress/runner/cypress_runner.js:5904:14)
+From Your Spec Code:
+    at Context.eval (http://www.webdriveruniversity.com/__cypress/tests?p=cypress\e2e\integration\other\same-origin-policy.js:104:8)</failure></testcase>
+<testcase classname="Cypress web security" name="Validate visiting two different domains via user actions" time="0.283"/>
+<testcase classname="Cypress web security" name="Origin command" time="2.588"/>
+</testsuite>
