@@ -54,9 +54,13 @@ describe("Test Contact Us form via WebDriverUni", ()=>{
         cy.get('[type="submit"]').click()
         cy.get('body').contains('Error: all fields are required')*///Contains --> dentro un un texto grande o varias lineas para saber si contiene una palabra o frase.
         //cy.contactForm(data.first_name, data.last_name, " ", "How can I learn Cypress?", 'body', 'Error: Invalid email address')
-        
-        contact_Us_PO.contactForm_Submission(data.first_name, data.last_name, " ", "How can I learn Cypress?", 'body', 'Error: Invalid email address');
 
+        if(Cypress.isBrowser('firefox')){ //Vamos asignar un buscador determinado a una prueba
+
+        }else{
+            contact_Us_PO.contactForm_Submission(data.first_name, data.last_name, " ", "How can I learn Cypress?", 'body', 'Error: Invalid email address');
+
+        }
     });
 
 })
