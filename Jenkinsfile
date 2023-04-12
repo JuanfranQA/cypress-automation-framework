@@ -14,7 +14,7 @@ pipeline {
                         git url: 'https://github.com/JuanfranQA/cypress-automation-framework.git'
                         bat 'npm install'
                         bat 'npm update'
-                        bat 'npm run triggerAllTests-autoTestStore-dashboard'
+                        bat 'npm run %Cript%'
                     }
                 }
                 stage('Slave Node2'){
@@ -25,7 +25,7 @@ pipeline {
                         git url: 'https://github.com/JuanfranQA/cypress-automation-framework.git'
                         bat 'npm install'
                         bat 'npm update'
-                        bat 'npm run triggerAllTests-autoTestStore-dashboard'
+                        bat 'npm run %Script%'
                     }
                 }
             }
