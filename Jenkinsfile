@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Cypress Parallel Test Suite'){
             parallel{
-                satage('Slave Node1'){
+                stage('Slave Node1'){
                     agent {
                         label "remote_node1"
                     }
@@ -17,7 +17,7 @@ pipeline {
                         bat 'npm run triggerAllTests-autoTestStore-dashboard'
                     }
                 }
-                satage('Slave Node2'){
+                stage('Slave Node2'){
                     agent {
                         label "remote_node2"
                     }
